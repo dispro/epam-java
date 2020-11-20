@@ -22,4 +22,20 @@ public class BasketServiceTest {
         double actual = service.getTotalWeight(basket);
         assertEquals(actual, 2.138);
     }
+    
+    
+    @Test
+    public void getCountBlueBallsTest(){
+
+        Basket basket = new Basket(
+                new Ball("red", 0.4),
+                new Ball("blue", 0.432),
+                new Ball("orange", 0.35),
+                new Ball("blue", 0.456),
+                new Ball("blue", 0.5)
+        );
+        BasketService service = new BasketService();
+        int actual = service.getCountBlueBalls(basket);
+        assertEquals(actual, 3);
+    }
 }
